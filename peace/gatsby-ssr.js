@@ -1,0 +1,46 @@
+import * as React from "react"
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <link
+      rel="preload"
+      href="/fonts/Lato/Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+      key="latoFontBold"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Lato/Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+      key="latoFontRegular"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Acanthis/Bold.otf"
+      as="font"
+      type="font/otf"
+      crossOrigin="anonymous"
+      key="acanthisFontBold"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Acanthis/Regular.otf"
+      as="font"
+      type="font/otf"
+      crossOrigin="anonymous"
+      key="acanthisFontRegular"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Acanthis/Italic.otf"
+      as="font"
+      type="font/otf"
+      crossOrigin="anonymous"
+      key="acanthisFontItalic"
+    />,
+  ])
+}
