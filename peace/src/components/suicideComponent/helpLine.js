@@ -6,6 +6,8 @@ import {
 } from "./suicideStyle";
 import MaxLifeline from "../../images/suicide/max-lifeline.png";
 import MaxCrisis from "../../images/suicide/max-crisisLine.png";
+import SecondaryHeaderTitle from "../secondaryHeaderTitle";
+
 function HelpLine() {
   const imageArr = [
     {
@@ -18,15 +20,16 @@ function HelpLine() {
   return (
     <SuicideHelplineContainer>
       <HelpLineWtrapper>
-        <p>Helpline</p>
-        <span>
-          If you or someone you know is having thoughts of suicide, a prevention
-          hotline can help
-        </span>
+        <SecondaryHeaderTitle
+          title={"Helpline"}
+          subTitle={
+            "If You Or Someone You Know Is Having Thoughts Of Suicide, A Prevention Hotline Can Help"
+          }
+        />
       </HelpLineWtrapper>
       <HelplineImageContainer>
-        {imageArr.map((x, index) => (
-          <img src={x.img} key={index} alt="imgSuicide"/>
+        {imageArr.map((x) => (
+          <img src={x.img} key={x.img} alt="imgSuicide" />
         ))}
       </HelplineImageContainer>
     </SuicideHelplineContainer>

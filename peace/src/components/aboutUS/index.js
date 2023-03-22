@@ -142,7 +142,7 @@ function index() {
           tabsArray={tabsArray}
           showButton={false}
           fullWidth={true}
-          style={true}
+          customStyle={true}
         />
       </AboutUstabWrapper>
       <AboutUsDoctorContainer>
@@ -161,7 +161,7 @@ function index() {
           <Tabs
             tabsArray={StateArray}
             showButton={false}
-            style={true}
+            customStyle={true}
             fullWidth={true}
           />
         </AboutUsFacilitiestabContainer>
@@ -191,7 +191,7 @@ function index() {
         urlPath="media"
       />
       <Faq />
-      <ArticleSection showIcons={true} urlPath="media" />
+      <ArticleSection showIcons={true} urlPath="articles" />
       <SingleSectionWrapper margin="6rem 0">
         <CheerSubscribe
           title="Subscribe now!"

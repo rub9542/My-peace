@@ -50,6 +50,8 @@ const YogaContainer = styled.section`
     flex-direction: column-reverse;
     height: auto;
     align-items: center;
+    margin: 0 auto;
+    padding: 1rem 0;
   }
 `;
 const PsychiatricContainer = styled.section`
@@ -65,8 +67,10 @@ const PsychiatricContainer = styled.section`
     align-items: center;
   }
 `;
-const TextCardWrapper = styled.div`
-  width: 42%;
+const TextCommonStyle = styled.div`
+  @media (max-width: 600px) {
+    width: 100%;
+  }
   > h2 {
     font-family: "Accanthis-Regular";
     font-style: normal;
@@ -77,6 +81,9 @@ const TextCardWrapper = styled.div`
     color: #101010;
     margin: 0;
   }
+`;
+const TextCardWrapper = styled(TextCommonStyle)`
+  width: 42%;
   @media (max-width: 1024px) {
     width: 80%;
     margin-top: 2rem;
@@ -84,9 +91,6 @@ const TextCardWrapper = styled.div`
       display: flex;
       justify-content: center;
     }
-  }
-  @media (max-width: 600px) {
-    width: 100%;
   }
 `;
 const ParagraphText = styled(DefaultParagraphText)`
@@ -99,19 +103,10 @@ const ParagraphText = styled(DefaultParagraphText)`
     width: 100%;
   }
 `;
-const SecondaryTextWrapper = styled.div`
+
+const SecondaryTextWrapper = styled(TextCommonStyle)`
   margin-right: 2rem;
   width: 40%;
-  > h2 {
-    font-family: "Accanthis-Regular";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 123.3%;
-    letter-spacing: -0.01em;
-    color: #101010;
-    margin: 0;
-  }
   @media (max-width: 1024px) {
     width: 80%;
     margin-top: 2rem;
@@ -121,12 +116,19 @@ const SecondaryTextWrapper = styled.div`
       justify-content: center;
     }
   }
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 `;
 const DownloadSection = styled(FlexAlignJustifyCenterContainer)`
   margin: 2rem 0 3rem 0;
+`;
+const WeeklyImageWrapper = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+const YogaMainWrapper = styled.div`
+  @media (max-width: 800px) {
+    background-color: #edf0ee;
+  }
 `;
 
 export {
@@ -140,4 +142,6 @@ export {
   PsychiatricContainer,
   SecondaryTextWrapper,
   DownloadSection,
+  WeeklyImageWrapper,
+  YogaMainWrapper,
 };

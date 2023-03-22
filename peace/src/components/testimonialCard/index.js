@@ -15,7 +15,7 @@ export default function index() {
             </TestimonialCardDescription>
             <TestimonialAuthorName>
                 <svg width="11" height="4" viewBox="0 0 11 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 2H11" stroke="#246335" strokeWidth="3" />
+                    <path d="M0 2H11" stroke="#13443e" strokeWidth="3" />
                 </svg>
                 <span>Nisha</span>
             </TestimonialAuthorName>

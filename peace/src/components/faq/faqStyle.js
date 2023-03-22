@@ -22,8 +22,15 @@ const FaqContainer = styled.section`
 const StyledAccordionItemPanel = styled(AccordionItemPanel)`
   padding: 0 20px;
   animation: fadein 0.35s ease-in;
+  font-size: 14px;
   p {
     font-size: 14px;
+  }
+  ul li {
+    list-style: disc !important;
+  }
+  ul {
+    padding: 0 2rem !important;
   }
 `;
 const FaqMainSection = styled(FlexAlignJustifyBetweenContainer)`

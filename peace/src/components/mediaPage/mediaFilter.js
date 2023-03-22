@@ -5,7 +5,6 @@ import {
   FilterLabel,
   FilterSection,
   MediaPageSection,
-
   MediaMainWrapper,
 } from "./mediaPageStyle";
 import { FormInput } from "../form/formStyle";
@@ -15,11 +14,10 @@ import Pagination from "../pagination";
 import { getMediaDatas } from "../../api";
 import { monthList } from "./arrayDatas";
 import Loader from "../loader";
-
-
+import { handleArrowBtn } from "../pagination/pageFunction";
+import { NotFound } from "../career/careerStyle";
 export default function MediaFilter(props) {
-  const { selectedTab, setSelectedTab } = props;
-
+  const { selectedTab } = props;
   const [filter, setFilter] = useState({
     month: "",
     category: "",
@@ -36,13 +34,17 @@ export default function MediaFilter(props) {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    // handleCategorydata();
     handleGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
   const handleCategorydata = async () => {
     let url = `${
-      selectedTab === "media" ? "media-categories" : "news-letter-categories"
+      selectedTab === "media"
+        ? "media-categories?sort=rank:asc"
+        : selectedTab === "blog"
+        ? "blog-categories?sort=rank:asc"
+        : "news-letter-categories?sort=rank:asc"
     }`;
     setLoading(true);
     const newdata = await getMediaDatas(url);
@@ -54,10 +56,13 @@ export default function MediaFilter(props) {
       data.length > 0 &&
         data.map((item) => {
           obj = {
-            label: item.attributes.name,
+            label: item.attributes.title
+              ? item.attributes.title
+              : item.attributes.Slug,
             value: `${item?.id}`,
           };
           tempArr.push(obj);
+          return "";
         });
       setLoading(false);
       setCategoryList(tempArr);
@@ -69,11 +74,16 @@ export default function MediaFilter(props) {
   useEffect(() => {
     handleCategorydata();
     handleGetData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedTab]);
 
   const handleGetData = async () => {
     let url = `${
-      selectedTab === "media" ? `posts?populate=*` : `news-letters?populate=*`
+      selectedTab === "media"
+        ? `posts?populate=*&sort=rank:asc`
+        : selectedTab === "blog"
+        ? "blogs?populate=*&sort=rank:asc"
+        : `news-letters?populate=*&sort=rank:asc`
     }&pagination[page]=${pagination.page}`;
     // &pagination[pageSize]=${pagination.pageCount}`;
     if (filter.search) {
@@ -99,40 +109,15 @@ export default function MediaFilter(props) {
     setFilter({ ...filter, [name]: e });
   };
 
-  const handleArrowBtn = (type, listLen, currentPage) => {
-    setpagination({
-      ...pagination,
-      page:
-        type === "prevLong"
-          ? 1
-          : type === "prev"
-          ? pagination.page !== 1
-            ? pagination.page - 1
-            : pagination.page
-          : type === "next"
-          ? pagination.page !== listLen
-            ? pagination.page + 1
-            : pagination.page
-          : type === "nextLong"
-          ? listLen
-          : type === "number"
-          ? currentPage
-          : listLen,
-    });
-    handleGetData();
-  };
-  const handletabChange = (selected) => {
-    setSelectedTab(selected);
-  };
   return (
     <MediaMainWrapper>
       <MediaPageSection>
         <FilterSection>
           <div>
-            <FilterLabel>Filter by category</FilterLabel>
+            <FilterLabel>Filter by Category</FilterLabel>
             <Dropdown
               options={categoryList}
-              placeholder="Choose category"
+              placeholder="Choose Category"
               onChange={(e) => handleData(e.value, "category")}
               value={filter.category}
             />
@@ -141,7 +126,7 @@ export default function MediaFilter(props) {
             <FilterLabel>Filter by Month</FilterLabel>
             <Dropdown
               options={monthList}
-              placeholder="Select month"
+              placeholder="Select Month"
               onChange={(e) => handleData(e.value, "month")}
               value={filter.month}
             />
@@ -149,37 +134,56 @@ export default function MediaFilter(props) {
           <div>
             <FilterLabel>Search</FilterLabel>
             <FormInput
-              placeholder="Search blogs"
+              placeholder="Search Blogs"
               onChange={(e) => handleData(e.target.value, "search")}
             />
           </div>
         </FilterSection>
-        {!loading && articleData.length > 0 ? (
+        {!loading ? (
           <>
-            <ArticleGridSection>
-              {articleData.length > 0 &&
-                articleData.map((item, index) => (
-                  <ArticleCard
-                    dataObj={item}
-                    key={index}
-                    mediaContent={selectedTab === "media" ? true : false}
-                    apiPath={selectedTab === "media" ? "media" : "newsLetter"}
-                  />
-                ))}
-            </ArticleGridSection>
+            {articleData.length > 0 ? (
+              <>
+                <ArticleGridSection>
+                  {articleData.length > 0 &&
+                    articleData.map((item, index) => (
+                      <ArticleCard
+                        dataObj={item}
+                        key={item.attributes.title}
+                        mediaContent={
+                          selectedTab === "media" || selectedTab === "blog"
+                            ? true
+                            : false
+                        }
+                        apiPath={
+                          selectedTab === "media"
+                            ? "media"
+                            : selectedTab === "blog"
+                            ? "articles"
+                            : "newsLetter"
+                        }
+                      />
+                    ))}
+                </ArticleGridSection>
 
-            <Pagination
-              currentPage={pagination?.page}
-              totalPages={pagination?.pageCount}
-              handleBtns={handleArrowBtn}
-            />
+                <Pagination
+                  pageData={pagination}
+                  currentPage={pagination?.page}
+                  totalPages={pagination?.pageCount}
+                  handleBtns={handleArrowBtn}
+                  triggerSuccess={handleGetData}
+                  stateUpdate={setpagination}
+                />
+              </>
+            ) : (
+              <NotFound>
+                <b>No Results Found !</b>
+              </NotFound>
+            )}
           </>
         ) : (
           <Loader />
         )}
       </MediaPageSection>
-
- 
     </MediaMainWrapper>
   );
 }

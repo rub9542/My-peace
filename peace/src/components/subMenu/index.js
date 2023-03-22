@@ -7,7 +7,7 @@ import {
   SubMenuImageWrapper,
 } from "./subMenuStyle";
 import { Link } from "gatsby";
-import CloseIcon from "../../images/header/close.png";
+// import CloseIcon from "../../images/header/close.png";
 
 export default function index({ top, menu, onClose }) {
   const { img, menus } = menu;
@@ -20,20 +20,22 @@ export default function index({ top, menu, onClose }) {
     <SubMenuContainer top={topVal}>
       {img && menus.length > 0 ? (
         <MenuInnerSection>
-          {menus.map((menuObj, index) => (
-            <SubMenuListWrapper key={menuObj.title + index}>
+          {menus.map((menuObj) => (
+            <SubMenuListWrapper key={menuObj.title}>
               <h6
+                onKeyDown={() => console.log("menuObj", menuObj)}
+                role="presentation"
                 onClick={() => console.log("menuObj", menuObj)}
-                onKeyUp={() => console.log("menuObj", menuObj)}
               >
                 <Link to={menuObj.link}>{menuObj.title}</Link>
               </h6>
               <ul>
-                {menuObj.menus.map((innerSubMenu, idx) => (
+                {menuObj.menus.map((innerSubMenu) => (
                   <li
-                    key={innerSubMenu.title + idx}
+                    key={innerSubMenu.title}
                     onClick={closeMenu}
                     onKeyDown={closeMenu}
+                    role="presentation"
                   >
                     <Link to={innerSubMenu.link}>{innerSubMenu.title}</Link>
                   </li>
@@ -44,9 +46,9 @@ export default function index({ top, menu, onClose }) {
           <SubMenuImageWrapper>
             <img alt={`sub menu - ${menus[0].title}`} src={img} />
           </SubMenuImageWrapper>
-          <div role="presentation" onKeyDown={closeMenu} onClick={closeMenu}>
+          {/* <div role="presentation" onKeyDown={closeMenu} onClick={closeMenu}>
             <img alt="modal close icon" className="cursor" src={CloseIcon} />
-          </div>
+          </div> */}
         </MenuInnerSection>
       ) : (
         ""

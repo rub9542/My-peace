@@ -128,20 +128,30 @@ const InsuranceContainer = styled.section`
   justify-content: space-between;
   @media (max-width: 1024px) {
     background: none;
+    flex-direction: column;
   }
 
-  @media (max-width: 800px) {
-    display: none;
+  @media (max-width: 600px) {
+    padding: 0 2rem;
+    margin: 0;
   }
 `;
 const InsuranceContactLeft = styled.div`
   padding-top: 2rem;
+  @media (max-width: 800px) {
+    h2 {
+      text-align: left;
+    }
+  }
 `;
 const InsuranceContactLeftImg = styled.div`
   padding-left: 8%;
   padding-top: 5%;
   img {
     height: 34rem;
+  }
+  @media (max-width: 800px) {
+    display: none !important;
   }
 `;
 const InsuranceContactBgImage = styled.div`
@@ -177,8 +187,17 @@ const InsuranceContactContainer = styled.section`
       text-align: left;
     }
   }
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0;
+  }
   @media (max-width: 768px) {
     min-width: -webkit-fill-available;
+  }
+  @media (max-width: 600px) {
+    > div {
+      padding: 0;
+    }
   }
 `;
 const InsuranceFormContainer = styled.div``;

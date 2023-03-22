@@ -12,4 +12,4 @@ function Suicide() {
 
 export default Suicide;
 
-export const Head = () => <title>Weekly Routine Page</title>;
+export const Head = () => <title>Sukoon || Suicide Help</title>;

@@ -113,9 +113,9 @@ const List = styled.li`
   padding: 1.94rem 0;
   padding-right: 3.3rem;
   cursor: ${(props) => (props.cursor ? "pointer" : "default")};
-  &:nth-child(7) {
-    padding: 0;
-  }
+  // &:nth-child(7) {
+  //   padding: 0;
+  // }
   @media (max-width: 1390px) {
     padding-right: 2rem;
   }
@@ -124,7 +124,6 @@ const List = styled.li`
   }
   &:hover ${LinkText} {
     color: ${colors.primary};
-    // margin-top:-10px;
     transform: scale(1.17);
     transition: transform 0.5s;
   }
@@ -252,7 +251,6 @@ const PopOver = styled.div`
     left: 0.75%;
     margin: auto;
     z-index: 15;
-    flex-direction: column-reverse;
     align-items: start;
     border-radius: 6px;
     > h5 {

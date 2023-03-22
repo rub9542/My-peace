@@ -21,8 +21,7 @@ export default function Headerlayout({ children }) {
   
     /* Method that will fix header after a specific scrollable */
     const onScroll = (e) => {
-      // const header = document.getElementById("header-wrapper");
-      const scrollTop = window.scrollY;
+      const scrollTop = isBrowser ? window.scrollY : "";
       setSticky(scrollTop > 100 ? true : false);
     };
 

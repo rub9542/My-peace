@@ -11,3 +11,4 @@ function Internationalpatients() {
 }
 
 export default Internationalpatients;
+export const Head = () => <title>Sukoon || International Patients</title>;

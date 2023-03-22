@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap");
 @font-face {
   font-family: "Lato-Regular";
   font-weight: 400;
@@ -163,7 +163,7 @@ img {
 
 .Dropdown-option.is-selected {
   color: #fff !important;
-  background-color: #246335 !important;
+  background-color: #13443e !important;
 }
 
 .Dropdown-option {
@@ -172,7 +172,7 @@ img {
 }
 
 .Dropdown-option:hover {
-  background-color: #2463354f !important;
+  background-color: #13443e !important;
 }
 .Dropdown-placeholder {
   color: #757575;
@@ -194,7 +194,7 @@ img {
   line-height: 28px;
   color: #757575;
   outline: none;
-  padding: 1.2rem 1rem;
+  padding: 0.8rem 1rem;
 }
 /* Elastic Carousel */
 
@@ -219,8 +219,9 @@ img {
 /* React-Select */
 .css-13cymwt-control {
   background: #eeeeee !important;
-  border-radius: 8px;
+  border-radius: 8px !important;
   padding: 0.35rem !important;
+  border: none !important;
 }
 .css-t3ipsp-control {
   padding: 0.35rem !important;
@@ -252,12 +253,16 @@ img {
 .css-1nmdiq5-menu {
   text-align: left !important;
   color: #000 !important;
+  z-index: 5 !important;
 }
 .css-1fdsijx-ValueContainer {
   padding: 0.35rem 0.5rem !important;
 }
 .css-1dimb5e-singleValue {
   text-align: start;
+}
+.css-1nmdiq5-menu:hover {
+  background-color: #fff !important;
 }
 
 /* mobile screens  */
@@ -288,5 +293,12 @@ img {
 
   ::-webkit-scrollbar {
     width: 1px;
+  }
+  .PhoneInputInput {
+    font-size: 14px !important;
+    padding: 0.8rem 1rem;
+  }
+  .css-1jqq78o-placeholder {
+    font-size: 14px !important;
   }
 }

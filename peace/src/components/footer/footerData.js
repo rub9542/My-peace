@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import FooterStyle from "./footerStyle";
+import { Link } from "gatsby-link";
 
 const hyperLinkText = {
   marginBottom: "1.75rem",
@@ -122,15 +123,15 @@ function FooterContent() {
             <p>Facilities</p>
           </FooterStyle.FooterTextHeader>
           <FooterStyle.FooterLinkText>
-            <a href="/facilities/gurgaon">
+            <Link to="/facilities/gurgaon">
               <p style={hyperLinkText}>Gurgaon</p>
-            </a>
-            <a href="/facilities/chattarpur">
+            </Link>
+            <Link to="/facilities/chattarpur">
               <p style={hyperLinkText}>Chhatarpur</p>
-            </a>
-            <a href="/facilities/delhi">
+            </Link>
+            <Link to="/facilities/delhi">
               <p style={hyperLinkText}>Delhi</p>
-            </a>
+            </Link>
           </FooterStyle.FooterLinkText>
         </FooterStyle.FacilitiesMenu>
         <FooterStyle.FooterQuickLinks>
@@ -140,55 +141,53 @@ function FooterContent() {
           <FooterStyle.QuickLinkMenu>
             <FooterStyle.QuickLinkSubMenu>
               <FooterStyle.FooterLinkText>
-                <a href="/">
+                <Link to="/">
                   <p>Home</p>
-                </a>
-                <a href="/international-patients">
+                </Link>
+                <Link to="/international-patients">
                   <p>International patients</p>
-                </a>
-                <a href="/suicide">
+                </Link>
+                <Link to="/suicide">
                   <p>Suicide help</p>
-                </a>
-                <a href="/insurance">
+                </Link>
+                <Link to="/insurance">
                   <p>Insurance</p>
-                </a>
+                </Link>
               </FooterStyle.FooterLinkText>
               <FooterStyle.FooterLinkText>
-                <a href="/aboutus">
+                <Link to="/aboutus">
                   <p>About us</p>
-                </a>
-                <a href="/articles">
+                </Link>
+                <Link to="/articles">
                   <p>Blogs</p>
-                </a>
-                <a href="/media">
+                </Link>
+                <Link to="/media">
                   <p>Media</p>
-                </a>
-                <a href="/career">
+                </Link>
+                <Link to="/career">
                   <p>Careers</p>
-                </a>
+                </Link>
               </FooterStyle.FooterLinkText>
             </FooterStyle.QuickLinkSubMenu>
             <FooterStyle.QuickLinkContact>
               <FooterStyle.FooterLinkText>
-                <a href="/get-in-touch/">
-                  <p>Contact us</p>
-                </a>
-                <a href="/faqDetail">
-                  <p>FAQ'S</p>
-                </a>
-              </FooterStyle.FooterLinkText>
-              <FooterStyle.FooterLinkText>
-                <p>Terms and condition</p>
-                <p>Privacy policy</p>
-                <a href="/clinical-programs/">
+                <Link to="/terms-and-condition">
+                  <p>Terms and condition</p>
+                </Link>
+                <Link to="/privacy-policy">
+                  <p>Privacy policy</p>
+                </Link>
+                <Link to="/clinical-programs/">
                   <p>Clinical program</p>
-                </a>
+                </Link>
               </FooterStyle.FooterLinkText>
               <FooterStyle.FooterLinkText>
-                <a href="/get-in-touch/">
+                <Link to="/get-in-touch/">
                   <p>Contact us</p>
-                </a>
-                <p>FAQ'S</p>
+                </Link>
+                <Link to="/faqDetail">
+                  <p>FAQ'S</p>
+                </Link>
               </FooterStyle.FooterLinkText>
             </FooterStyle.QuickLinkContact>
           </FooterStyle.QuickLinkMenu>

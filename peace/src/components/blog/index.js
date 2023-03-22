@@ -1,4 +1,5 @@
 import React from "react";
+
 import { SingleSectionWrapper } from "../../styles/homePageStyle";
 import MediaFilter from "../mediaPage/mediaFilter";
 import CheerSubscribe from "../staticComponent/cheerSubscribe";
@@ -15,12 +16,9 @@ export default function BlogPageComponent() {
     <BlogMainWrapper>
       <BlogContent />
       <SecondarySubWrapper>
-        <SecondaryHeaderTitle
-          title=""
-          subTitle="Read our recent articles"
-        />
+        <SecondaryHeaderTitle title="" subTitle="Read our recent articles" />
       </SecondarySubWrapper>
-      <MediaFilter />
+      <MediaFilter selectedTab="blog" />
       <SingleSectionWrapper margin="6.5rem 0 5rem 0">
         <CheerSubscribe
           title="Cheer up!"

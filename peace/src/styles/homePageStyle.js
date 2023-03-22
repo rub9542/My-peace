@@ -119,6 +119,7 @@ const BuddySectionWrapper = styled.section`
   }
 
   @media (max-width: 600px) {
+    padding: 2.5rem 1rem;
     > h2 {
       font-size: 24px !important;
       line-height: 25.51px !important;

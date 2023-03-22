@@ -70,12 +70,12 @@ function CheckList() {
   ];
   return (
     <CheckListWrapper>
-      {checkArry.map((x, index) => (
-        <CheckListContainer key={index}>
+      {checkArry.map((x) => (
+        <CheckListContainer key={x.title}>
           <ChecklistTitle>{x.title}</ChecklistTitle>
           <CheckListPointsWrapper>
-            {x.list.map((y, index) => (
-              <CheckListPoints key={index}>
+            {x.list.map((y) => (
+              <CheckListPoints key={y.points}>
                 <img src={PointsImg} alt="internationalImages"/>
                 <span>{y.points}</span>
               </CheckListPoints>

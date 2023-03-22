@@ -44,7 +44,6 @@ const WhatWeDoInnerSectionWrapper = styled.div`
   padding-left: 5rem;
   @media (max-width: 1024px) {
     padding-left: 0rem;
-    // grid-template-columns:repeat(2, 1fr);
   }
   @media (max-width: 925px) {
     grid-template-columns: repeat(2, 1fr);
@@ -80,31 +79,11 @@ const FlowerImage = styled.img`
     display: none;
   }
 `;
-const VisionMissionWrapper = styled.div`
-  display: flex;
-  // gap: 4rem;
-  justify-content: space-between;
-  gap: 5rem;
-  padding: 8rem 4rem 2rem 4rem;
-  div {
-    // width: 522px;
-    border-radius: 18px;
-  }
-  h5,
-  p {
-    text-align: left;
-  }
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    padding: 8rem 0.5rem 2rem 0.5rem;
-  }
-`;
 
 const WhatWeDoheaderContainer = styled.div`
   padding: ${(props) => (props.style ? "0rem 0rem 2rem 0rem" : "2rem 0")};
 
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     padding: 2rem 0;
   }
 `;
@@ -114,6 +93,5 @@ export {
   FlowerImage,
   DashedCircleDiv,
   WhatWEDoContainer,
-  VisionMissionWrapper,
   WhatWeDoheaderContainer,
 };

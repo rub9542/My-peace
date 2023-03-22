@@ -74,11 +74,13 @@ const prevSvg = (
   </svg>
 );
 
-
 export default function Pagination({
   currentPage,
   totalPages,
   handleBtns,
+  pageData,
+  triggerSuccess,
+  stateUpdate,
 }) {
   const [pageList, setPageLIst] = useState([]);
 
@@ -99,12 +101,30 @@ export default function Pagination({
     <PaginationSection>
       <PaginationListWrapper>
         <PaginationList
-          onClick={() => handleBtns("prevLong", pageList.length, currentPage)}
+          onClick={() =>
+            handleBtns(
+              "prevLong",
+              pageList.length,
+              currentPage,
+              pageData,
+              stateUpdate,
+              triggerSuccess
+            )
+          }
         >
           {veryFirstSvg}
         </PaginationList>
         <PaginationList
-          onClick={() => handleBtns("prev", pageList.length, currentPage)}
+          onClick={() =>
+            handleBtns(
+              "prev",
+              pageList.length,
+              currentPage,
+              pageData,
+              stateUpdate,
+              triggerSuccess
+            )
+          }
         >
           {prevSvg}
         </PaginationList>
@@ -112,19 +132,45 @@ export default function Pagination({
           <PaginationList
             active={currentPage === pageNum}
             key={pageNum}
-            onClick={(e) => handleBtns("number", e.target.value, pageNum)}
+            onClick={(e) =>
+              handleBtns(
+                "number",
+                e.target.value,
+                pageNum,
+                pageData,
+                stateUpdate,
+                triggerSuccess
+              )
+            }
           >
             {pageNum}
           </PaginationList>
         ))}
-        {/* {spaceDots} */}
         <PaginationList
-          onClick={() => handleBtns("next", pageList.length, currentPage)}
+          onClick={() =>
+            handleBtns(
+              "next",
+              pageList.length,
+              currentPage,
+              pageData,
+              stateUpdate,
+              triggerSuccess
+            )
+          }
         >
           {nextSvg}
         </PaginationList>
         <PaginationList
-          onClick={() => handleBtns("nextLong", pageList.length, currentPage)}
+          onClick={() =>
+            handleBtns(
+              "nextLong",
+              pageList.length,
+              currentPage,
+              pageData,
+              stateUpdate,
+              triggerSuccess
+            )
+          }
         >
           {veryLastSvg}
         </PaginationList>

@@ -1,7 +1,6 @@
 import React from "react";
 import CareerContent from "./careerContent";
 import JoinOurTeam from "./joinOurTeam";
-import Pagination from "../pagination";
 import Faq from "../faq";
 import ArticleSection from "../articleSection";
 import CheerSubscribe from "../staticComponent/cheerSubscribe";
@@ -16,13 +15,10 @@ export default function CareerPageComponent() {
     <CareerMainWrapper>
       <JoinOurTeam />
       <CareerContent />
-      <SingleSectionWrapper>
-        <Pagination currentPage="1" totalPages="5" />
-      </SingleSectionWrapper>
       <SingleSectionWrapper margin="6rem 0 0 0">
         <Faq />
       </SingleSectionWrapper>
-      <ArticleSection />
+      <ArticleSection showIcons={true} urlPath="articles" />
       <SingleSectionWrapper margin="4rem 0">
         <CheerSubscribe
           title="Subscribe now!"

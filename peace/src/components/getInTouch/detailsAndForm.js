@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -8,7 +8,7 @@ import {
   DetailsTitle,
   FooterImageWrapper,
   AddressDetails,
-  FooterText,
+  GetInTouchText,
   AddressTitles,
   AddressContainer,
   BackBgImage,
@@ -16,6 +16,8 @@ import {
 } from "./getInTouchStyle";
 import FormTouch from "./touchForm";
 function DetailsAndForm() {
+  const [formSuccess, setformSuccess] = useState(false);
+
   const address = [
     {
       title: "Gurgaon",
@@ -41,7 +43,7 @@ function DetailsAndForm() {
       <BackBgImage />
       <DetailsContainer>
         <DetailsTitle>Get in Touch</DetailsTitle>
-        <FooterText>
+        <GetInTouchText>
           <div>
             <FooterImageWrapper>
               <StaticImage
@@ -69,10 +71,10 @@ function DetailsAndForm() {
             </FooterImageWrapper>
             Info@sukoonhealth.com
           </div>
-        </FooterText>
+        </GetInTouchText>
         <DetailsTitle>Visit us</DetailsTitle>
-        {address.map((x, index) => (
-          <AddressContainer key={index}>
+        {address.map((x) => (
+          <AddressContainer key={x.state}>
             <AddressTitles>{x.title}</AddressTitles>
             <AddressDetails>
               {x.address} <br /> {x.subAddress} <br />
@@ -82,7 +84,11 @@ function DetailsAndForm() {
         ))}
       </DetailsContainer>
       <FormWrapper>
-        <FormTouch />
+        <FormTouch
+          formSuccess={formSuccess}
+          setformSuccess={setformSuccess}
+          frompath="get-in-touches"
+        />
       </FormWrapper>
     </FormAndDetailContainer>
   );

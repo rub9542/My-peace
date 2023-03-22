@@ -14,7 +14,7 @@ import { DefaultButton } from "../button";
 import { getMediaDatas } from "../../api";
 import Loader from "../../components/loader";
 import { Link } from "gatsby-link";
-
+import { NotFound } from "../career/careerStyle";
 export default function Article({
   titleProp,
   subtitleProp,
@@ -29,7 +29,7 @@ export default function Article({
   }, []);
 
   const handleGetData = async () => {
-    let url = `posts?populate=*`;
+    let url = `blogs?populate=*&sort=rank:asc`;
     setLoading(true);
     const newdata = await getMediaDatas(url);
     const { body, status } = newdata;
@@ -37,7 +37,6 @@ export default function Article({
       const { data } = body;
       setLoading(false);
       setArticleData(data);
-      // setpagination({ ...pagination, ...meta.pagination });
     } else {
       setLoading(false);
     }
@@ -53,27 +52,35 @@ export default function Article({
               {subtitleProp ? subtitleProp : "Read our recent articles"}
             </SubTitleText>
             <ArticleCardContainer>
-              <ArticleInnerSectionWrapper>
-                {articleData.length > 0 &&
-                  articleData.map((item, index) => {
-                    if (index < 3) {
-                      return (
-                        <ArticleCard
-                          dataObj={item}
-                          key={index}
-                          mediaContent={showIcons}
-                          apiPath={urlPath}
-                        />
-                      );
-                    }
-                    return ""
-                  })}
-              </ArticleInnerSectionWrapper>
-              <ArticleSectionFooter>
-                <Link href="/articles">
-                  <DefaultButton name="View more" />
-                </Link>
-              </ArticleSectionFooter>
+              {articleData.length > 0 ? (
+                <ArticleInnerSectionWrapper>
+                  {articleData.length > 0 &&
+                    articleData.map((item, index) => {
+                      if (index < 3) {
+                        return (
+                          <ArticleCard
+                            dataObj={item}
+                            key={index}
+                            mediaContent={showIcons}
+                            apiPath={urlPath}
+                          />
+                        );
+                      }
+                      return "";
+                    })}
+                </ArticleInnerSectionWrapper>
+              ) : (
+                <NotFound>
+                  <b>No Results Found !</b>
+                </NotFound>
+              )}
+              {articleData.length > 0 && (
+                <ArticleSectionFooter>
+                  <Link to="/articles">
+                    <DefaultButton name="View more" />
+                  </Link>
+                </ArticleSectionFooter>
+              )}
             </ArticleCardContainer>
           </ArticleSubWrapper>
         </ArticleSectionWrapper>

@@ -150,7 +150,7 @@ export default function RecoveryComponent() {
                 <h4>{data.title}</h4>
                 <ParagraphText>
                   {data.description.map((listData, index) => (
-                    <p>
+                    <p key={listData.option}>
                       {index + 1}. {listData.option}
                     </p>
                   ))}
@@ -172,7 +172,7 @@ export default function RecoveryComponent() {
                 <h4>{data.title}</h4>
                 <ParagraphText>
                   {data.description.map((listData, index) => (
-                    <p>
+                    <p key ={listData.option}>
                       {index + 1}. {listData.option}
                     </p>
                   ))}

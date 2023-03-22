@@ -11,3 +11,5 @@ function GetInTouch() {
 }
 
 export default GetInTouch;
+export const Head = () => <title>Sukoon || Contact Us</title>;
+

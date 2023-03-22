@@ -1,3 +1,6 @@
+
+//monthList array used in dropdown option, which show list of available months
+
 export const monthList = [
   {
     label: "January",

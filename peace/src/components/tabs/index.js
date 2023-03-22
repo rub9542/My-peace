@@ -11,7 +11,7 @@ import BookAppointmentModal from "../bookAppointmentModal";
 import { Link } from "gatsby";
 
 export default function Tabs(props) {
-  const { showButton, activeTab, tabsArray, isService, style, fullWidth } =
+  const { showButton, activeTab, tabsArray, isService, customStyle, fullWidth } =
     props;
   const [selectedTab, setActiveTab] = useState(activeTab || 0);
   const isBrowser = typeof window !== "undefined";
@@ -40,7 +40,7 @@ export default function Tabs(props) {
       isService={isService ? isService : false}
       fullwidth={fullWidth}
     >
-      <TabInnerSection widthStyle={style}>
+      <TabInnerSection widthStyle={customStyle}>
         {tabsArray.map((tab) => (
           <TabList
             isService={isService ? isService : false}

@@ -12,7 +12,8 @@ import {
   ThoughtsWrapper,
   ThoughtsImageWrapper,
   ThoughtsWrappertext,
-  ThoughtsList,SuicidemainWrapper
+  ThoughtsList,
+  SuicidemainWrapper,
 } from "./suicideStyle";
 import ThoughtsImageOne from "../../images/suicide/thoughtsImageOne.png";
 import ThoughtsImageTwo from "../../images/suicide/thoughtsImageTwo.png";
@@ -73,8 +74,8 @@ function index() {
           thoughts do not necessarily indicate a person has the intention to end
           their life.
         </span>
-        {ThoughtsArr.map((x, index) => (
-          <ThoughtsWrapper key={index}>
+        {ThoughtsArr.map((x) => (
+          <ThoughtsWrapper key={x.title}>
             <ThoughtsImageWrapper>
               <img src={x.img} alt="thoughts" />
             </ThoughtsImageWrapper>
@@ -82,7 +83,7 @@ function index() {
               <p>{x.title}</p>
               <div>
                 {x.listData.map((y) => (
-                  <ThoughtsList>
+                  <ThoughtsList key={y.item}>
                     <img src={Dots} alt="*" />
                     <span>{y.item}</span>
                   </ThoughtsList>
@@ -100,8 +101,9 @@ function index() {
           subTitle="Book an appointment now"
         />
       </SingleSectionWrapper>
-      <Faq />
-      <br />
+      <SingleSectionWrapper>
+        <Faq />
+      </SingleSectionWrapper>
       <SingleSectionWrapper margin="6rem 0">
         <CheerSubscribe
           title="Subscribe now!"

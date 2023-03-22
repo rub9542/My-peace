@@ -96,6 +96,9 @@ const FilterLabel = styled.label`
 `;
 const MediaHeaderWrapper = styled.div`
   margin: 2rem 0 0 4rem;
+  @media (max-width: 600px) {
+    margin: 2rem 0 0 0.5rem;
+  }
 `;
 const MediaMainWrapper = styled.section``;
 export {

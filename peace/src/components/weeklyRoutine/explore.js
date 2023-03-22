@@ -1,11 +1,11 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import SecondaryHeaderTitle from "../secondaryHeaderTitle";
 
 import {
   ExploreWeeklyContainer,
   ExploreWeeklyParagraphText,
   ExploreWeeklyTextWrapper,
+  WeeklyImageWrapper,
 } from "./weeklyRoutineStyle";
 import WeeklyImage from "../../images/weeklyRoutine/weeklyroutine.png";
 
@@ -32,15 +32,9 @@ export default function ExploreWeeklyRoutine({
           world-class experience.`}
         </ExploreWeeklyParagraphText>
       </ExploreWeeklyTextWrapper>
-      <div>
-        {/* <StaticImage
-          alt="weekly routine image"
-          src={
-            imgPath ? imgPath : "../../images/weeklyRoutine/weeklyroutine.png"
-          }
-        /> */}
-        <img src={imgPath ? imgPath : WeeklyImage} alt="weekly routine image" />
-      </div>
+      <WeeklyImageWrapper>
+        <img src={imgPath ? imgPath : WeeklyImage} alt="weekly routine_image" />
+      </WeeklyImageWrapper>
     </ExploreWeeklyContainer>
   );
 }

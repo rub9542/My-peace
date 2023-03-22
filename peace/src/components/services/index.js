@@ -35,7 +35,7 @@ export default function ServicesPageComponent(props) {
         activeTab={activeTab}
         showButton={false}
         isService={true}
-        style={"100%"}
+        customStyle={true}
       />
 
       <ServiceComponentData
@@ -60,7 +60,7 @@ export default function ServicesPageComponent(props) {
         />
       </SingleSectionWrapper>
       <Faq />
-      <ArticleSection urlPath="media" />
+      <ArticleSection urlPath="articles" />
       <SingleSectionWrapper margin="4rem 0">
         <CheerSubscribe
           title="Subscribe now!"

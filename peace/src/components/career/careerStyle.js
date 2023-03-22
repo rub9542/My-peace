@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { DefaultParagraphText } from "../../styles/commonStyle";
 import variables from "../../styles/variables";
+import { SecondaryTitle } from "../faqDetail/faqDetailStyle";
+import { FilterLabel } from "../mediaPage/mediaPageStyle";
 
 const { colors } = variables;
 
@@ -17,6 +19,10 @@ const CareerSectionWrapper = styled.div`
     height: auto;
     align-items: center;
     padding: 2rem 1rem;
+  }
+  @media (max-width: 600px) {
+    padding: 4.5rem 1rem 2rem;
+    margin: 0;
   }
 `;
 const CareerSectionTextWrapper = styled.div`
@@ -36,33 +42,28 @@ const GridSection = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
-`;
-const FilterSection = styled(GridSection)`
-  margin: 2rem 2.5rem;
   @media (max-width: 925px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+const FilterSection = styled(GridSection)`
+  margin: 2rem 2.5rem;
 
   @media (max-width: 600px) {
     display: ${(props) => (props.filterShow === true ? "grid" : "none")};
-    grid-template-columns: repeat(1, 1fr);
     width: 93%;
     margin: 2rem auto;
   }
 `;
-const FilterLabel = styled.label`
-  font-family: "Lato-Regular";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  color: #000000;
-  display: block;
-  margin-bottom: 0.5rem;
-`;
+const FilterLabelWrapper = styled(FilterLabel)``;
+
 const CareerCardSectionWrapper = styled.section`
   padding: 0 2rem 0 2rem;
-  min-height: 615px;
+  min-height: fit-content;
+  max-height: 615px;
   position: relative;
   z-index: 1;
   @media (max-width: 1024px) {
@@ -70,22 +71,15 @@ const CareerCardSectionWrapper = styled.section`
     margin-bottom: 0;
     margin-left: 0;
     padding: 0 1.25rem 2rem 1.25rem;
+    max-height: fit-content;
   }
 `;
-const CareerCardInnerWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+const CareerCardInnerWrapper = styled(GridSection)`
   grid-gap: 2rem;
   margin: 4rem 3rem;
   @media (max-width: 1024px) {
     padding-left: 0rem;
     margin: 0;
-  }
-  @media (max-width: 925px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(1, 1fr);
   }
 `;
 const CareerImageWrapper = styled.div`
@@ -94,38 +88,17 @@ const CareerImageWrapper = styled.div`
     display: none;
   }
 `;
-const SecondaryTitle = styled.h2`
-font-family: 'Accanthis-Bold';
-font-style: normal;
-font-weight: 700;
-font-size: 48px;
-line-height: 51px;
-letter-spacing: -0.01em;
-color: #331B3B;
-margin:0 0 2rem 0;
-@media (max-width: 600px) {
-  font-size: 30px !important;
-  line-height: 30px !important;
-}
->span{
-    display:block;
-    font-family: 'Accanthis-Regular';
-    font-style: normal;
-    font-weight: 400;
-}
-
-}
+const SecondaryTitleWrapper = styled(SecondaryTitle)`
+  font-size: 48px;
 `;
 const SearchBlogWrapper = styled.div`
   display: none;
   @media (max-width: 600px) {
-    width: 90%;
-    margin: 2rem auto;
-    background-color: #eeeeee;
+    margin: 0 0 2rem 0;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    padding: 0 0.5rem 0 1rem;
+    padding: 0 1rem;
     > p {
       font-family: "Lato-Regular";
       font-style: normal;
@@ -136,7 +109,15 @@ const SearchBlogWrapper = styled.div`
     }
   }
 `;
+const ResponsiveWrapper = styled.div`
+  display: flex;
+`;
 
+const NotFound = styled.p`
+  display: flex;
+  justify-content: center;
+  color: ${colors.primary};
+`;
 export {
   CareerMainWrapper,
   CareerSectionWrapper,
@@ -144,10 +125,12 @@ export {
   CareerSectionParagraphText,
   ContentSectionWrapper,
   FilterSection,
-  FilterLabel,
+  FilterLabelWrapper,
   CareerCardSectionWrapper,
   CareerCardInnerWrapper,
   CareerImageWrapper,
-  SecondaryTitle,
+  SecondaryTitleWrapper,
   SearchBlogWrapper,
+  ResponsiveWrapper,
+  NotFound,
 };

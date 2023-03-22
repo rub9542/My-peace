@@ -5,7 +5,7 @@ import {
   CareerSectionTextWrapper,
   CareerSectionWrapper,
   CareerImageWrapper,
-  SecondaryTitle,
+  SecondaryTitleWrapper,
 } from "./careerStyle";
 
 export default function JoinOurTeam() {
@@ -13,11 +13,11 @@ export default function JoinOurTeam() {
     <CareerSectionWrapper>
       <CareerSectionTextWrapper>
         <div>
-          <SecondaryTitle>
+          <SecondaryTitleWrapper>
             Join
             <br />
             <span>Our Team</span>
-          </SecondaryTitle>
+          </SecondaryTitleWrapper>
         </div>
         <CareerSectionParagraphText>
           Search our openings and apply for jobs that’ll surround you with great

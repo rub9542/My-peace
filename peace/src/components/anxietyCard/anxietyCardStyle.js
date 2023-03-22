@@ -44,7 +44,7 @@ const AnxdietyCardWrapper = styled(FlexContainer)`
     }
   }
   @media (min-width: 800px) and (max-width: 990px) {
-    height: fit-content;
+    height: 310px;
     p {
       // max-height: 70%;
       margin-top: 40%;
@@ -58,12 +58,12 @@ const AnxdietyCardWrapper = styled(FlexContainer)`
         : `
         margin-bottom:6rem;
     `}
-    height: 222px;
+    height: 277px;
     max-height: 280px;
     p {
       font-size: 14px;
-      line-height: 23px;
-      padding: 0rem;
+      line-height: 28px;
+      padding: 2rem 0 1rem 0;
     }
     img{
       width: fit-content;
@@ -72,13 +72,13 @@ const AnxdietyCardWrapper = styled(FlexContainer)`
   @media (max-width: 600px) {
     img {
       width: auto;
-      top: -58px;
+      top: -90px;
     }
   }
   @media (max-width: 350px) {
     max-height: fit-content;
     img{
-      width: 55%;
+      width: auto;
     height: ${(props) => (props.fromPath === "home" ? "85%" : "50%")};
     }
     }
@@ -91,6 +91,9 @@ const CardSpanTitle = styled.span`
   letter-spacing: 0.055em;
   text-align: left;
   color: rgba(51, 27, 59, 1);
+
+  display: inline-block;
+  padding-bottom: 10px;
 
   @media (max-width: 600px) {
     font-size: 16px;

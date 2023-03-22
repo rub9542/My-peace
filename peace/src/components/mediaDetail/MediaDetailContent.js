@@ -16,15 +16,17 @@ import {
   MentalHealth,
   SocialIcon,
 } from "./mediaDetailStyle";
-import Twiter from '../../images/mediaDetail/twitter.png'
-import FB from '../../images/mediaDetail/fb.png'
+import Twiter from "../../images/mediaDetail/twitter.png";
+import FB from "../../images/mediaDetail/fb.png";
 
-
-function MediaDetailContent({ dataObj }) {
+function MediaDetailContent({ dataObj, toPath }) {
+  const FbIcon = {
+    height: "39px",
+  };
   return (
     <MainSectionWrapper>
-      <Link to="/media">
-        <MediaWrapper>
+      <Link /*to={toPath}*/>
+        <MediaWrapper onClick={() => window.history.go(-1)}>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +59,7 @@ function MediaDetailContent({ dataObj }) {
               alt="facebook Image"
               src="../../images/mediaDetail/fb.png"
             /> */}
-            <img src={FB} alt="facebook" />
+            <img src={FB} alt="facebook" style={FbIcon} />
           </SocialIcon>
         </MentalHealthHeader>
 

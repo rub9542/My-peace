@@ -13,4 +13,4 @@ const FaqDetailPage = () => {
 
 export default FaqDetailPage;
 
-export const Head = () => <title>Faq Page</title>;
+export const Head = () => <title>Sukoon || Faq Page</title>;

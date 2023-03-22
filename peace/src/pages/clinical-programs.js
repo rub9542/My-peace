@@ -13,4 +13,4 @@ const RecoveryJourney = () => {
 
 export default RecoveryJourney;
 
-export const Head = () => <title>Recovery Journey Page</title>;
+export const Head = () => <title>Sukoon || Recovery Journey Page</title>;

@@ -12,4 +12,4 @@ const Insurance = () => {
 
 export default Insurance;
 
-export const Head = () => <title>Insurance</title>;
+export const Head = () => <title>Sukoon || Insurance</title>;

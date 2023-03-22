@@ -43,6 +43,9 @@ const FormInput = styled.input`
     /* Microsoft Edge */
     color: rgba(0, 0, 0, 1);
   }
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 const FormField = styled.div`
   margin-bottom: 1.5rem;
@@ -57,24 +60,12 @@ const FormError = styled.span`
   font-size: 12px;
 `;
 const FormSuccess = styled.span`
-  color: #246335;
+  color: #13443e;
   font-size: 12px;
 `;
 
-const FormtextArea = styled.textarea`
+const FormtextArea = styled(FormInput).attrs({ as: "textarea" })`
   resize: none;
-  background: ${(props) => (props.bg ? props.bg : "#EEEEEE")};
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
-  font-family: "Lato-Regular";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  color: #757575;
-  border: 0px;
-  width: -webkit-fill-available;
-  outline: none;
   max-height: 138.16px;
   max-width: 95%;
   min-width: 95%;

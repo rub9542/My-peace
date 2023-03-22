@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Tab,
   TabsWrapper,
@@ -18,7 +18,6 @@ const tabs = [
 ];
 
 export default function MediaHeader(props) {
-  
   const { selectedTab, setSelectedTab } = props;
 
   const handletabChange = (selected) => {
@@ -41,8 +40,8 @@ export default function MediaHeader(props) {
         {selectedTab === "media" ? "Media" : "Newsletter"} <br />
         <span>
           {selectedTab === "media"
-            ? "Our recent announcements"
-            : "Read our recent newsletters"}
+            ? "Our Recent Announcements"
+            : "Read Our Recent Newsletters"}
         </span>
       </MediaPageHeader>
     </MediaHeaderWrapper>

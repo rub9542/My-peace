@@ -17,3 +17,4 @@ const ResidentialServices = () => {
 };
 
 export default ResidentialServices;
+export const Head = () => <title>Services || Residential Services</title>;

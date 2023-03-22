@@ -22,7 +22,6 @@ export default function index({
         {title && (
           <CardSpanTitle>
             {title.toUpperCase()}
-            <br />
           </CardSpanTitle>
         )}
         <br />

@@ -4,13 +4,13 @@ const MainSectionWrapper = styled.section`
   padding: 0 3rem;
 
   @media (max-width: 600px) {
-    padding: 0;
+    padding: 3rem 0 0 0;
   }
 `;
 const MediaWrapper = styled.div`
   display: flex;
   padding: 2rem 0 1rem 0;
-
+  cursor: pointer;
   @media (max-width: 600px) {
     padding: 0 1rem;
     align-items: center;
@@ -18,6 +18,7 @@ const MediaWrapper = styled.div`
       > svg {
         height: 12px;
         width: 6.782608509063721px;
+        color: rgba(0, 0, 0, 1);
       }
     }
   }
@@ -36,14 +37,25 @@ const BackWrapper = styled.div`
   }
   @media (max-width: 600px) {
     > p {
+      font-family: "Lato-Regular";
       font-size: 14px;
       margin: 0;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 1);
     }
   }
 `;
 const MainImageWrapper = styled.div`
   > img {
     max-width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    > img {
+      height: 209px;
+    }
   }
 `;
 
@@ -172,8 +184,8 @@ const SocialIcon = styled.div`
   display: flex;
   gap: 20px;
   img {
-    height: 33.98637390136719px;
-    width: 41.8200798034668px;
+    height: 36px;
+    width: 40px;
   }
 
   @media (max-width: 1024px) {

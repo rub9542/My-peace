@@ -87,8 +87,8 @@ function ServiceComponentData(props) {
             <br />
             <ServiceDescription>{getIndex("description")}</ServiceDescription>
             <ServiceListContainer>
-              {getIndex("descriptionList").map((item, index) => (
-                <ServiceListContainerItem key={index}>
+              {getIndex("descriptionList").map((item) => (
+                <ServiceListContainerItem key={item}>
                   <ServiceListDot />
                   <ServiceContainerDescription>
                     {item}
@@ -105,8 +105,8 @@ function ServiceComponentData(props) {
           psychiatric services both for hospitalization, and emergency because
           at Sukoon you will have:
         </p>
-        {listArray.map((item, index) => (
-          <ServiceListItemsWrapper key={index}>
+        {listArray.map((item) => (
+          <ServiceListItemsWrapper key={item}>
             <ServiceItemDot src={FacilitiesDot} />
             <ServiceMainTextWrapper>{item.description}</ServiceMainTextWrapper>
           </ServiceListItemsWrapper>
@@ -131,8 +131,8 @@ function ServiceComponentData(props) {
         <ServiceSpanContent>
           {getIndex("approachDescription")}
         </ServiceSpanContent>
-        {getIndex("descriptionList").map((item, index) => (
-          <ServiceListItemsWrapper key={index}>
+        {getIndex("descriptionList").map((item) => (
+          <ServiceListItemsWrapper key={item}>
             <ServiceItemDot src={FacilitiesDot} />
             <ServiceItem>{item}</ServiceItem>
           </ServiceListItemsWrapper>

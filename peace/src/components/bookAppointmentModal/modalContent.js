@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 
 import { PrimaryLargeButton } from "../button";
-import {
-  FormField,
-  FormInput,
-  FormLabel,
-  FormError,
-} from "../form/formStyle";
+import { FormField, FormInput, FormLabel, FormError } from "../form/formStyle";
 import {
   ModalContentSection,
   SuccessModalContentWrapper,
 } from "./bookAppointmentStyle";
 import Dropdown from "../dropdown";
-import PhoneNumberInput from "../phoneNumberInut";
+import PhoneNumberInput from "../phoneNumberInput";
 import { postMethod } from "../../api";
-import { validatedataObj } from "./validate";
+import { validatedataObj } from "../validate";
 const appointmentOptions = [
   {
     label: "In Person",
@@ -35,7 +30,6 @@ export default function ModalContent(props) {
     type: "",
   });
   const [errorObj, setErrorObj] = useState({});
-  // const [displayMsg, setDisplayMsg] = useState(false);
 
   const handleChangeAppointment = (e) => {
     const { name, value } = e.target;
@@ -78,7 +72,6 @@ export default function ModalContent(props) {
       setErrorObj({ ...errorObj, ...err });
     }
   };
-
 
   return (
     <>

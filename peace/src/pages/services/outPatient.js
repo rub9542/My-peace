@@ -1,5 +1,4 @@
 import * as React from "react";
-// import { useParams } from 'react-router-dom';
 import OtherLayout from "../../layouts/otherLayout";
 import ServicesPageComponent from "../../components/services";
 
@@ -17,3 +16,5 @@ const OutPatientServices = () => {
 };
 
 export default OutPatientServices;
+
+export const Head = () => <title>Services || Out Patient Services</title>;

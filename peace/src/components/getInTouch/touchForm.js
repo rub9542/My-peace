@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 
 import { FormContainer } from "./getInTouchStyle";
-import Select from "react-select";
+import Select, { createFilter } from "react-select";
 import {
   FormField,
   FormInput,
@@ -13,9 +13,11 @@ import { SuccessModalContentWrapper } from "../bookAppointmentModal/bookAppointm
 import { PrimaryLargeButton } from "../button";
 import countryList from "react-select-country-list";
 import { postMethod } from "../../api";
-import { validatedataObj } from "./validate";
+import PhoneNumberInput from "../phoneNumberInput";
+import { validatedataObj } from "../validate";
 
 function TouchForm(props) {
+  const { frompath, formSuccess, setformSuccess } = props;
   const [getIntouchForm, setgetIntouchForm] = useState({
     name: "",
     email: "",
@@ -25,13 +27,18 @@ function TouchForm(props) {
   });
   const options = useMemo(() => countryList().getData(), []);
   const [errorObj, setErrorObj] = useState({});
-  const [formSuccess, setformSuccess] = useState(false);
   const [countryListArr, setcountryListArr] = useState([]);
 
   const handleChanges = (val, name) => {
     setgetIntouchForm({ ...getIntouchForm, [name]: val });
     if (Object.keys(errorObj).length !== 0) {
       delete errorObj[name];
+    }
+  };
+  const handlePhoneNumber = (number) => {
+    setgetIntouchForm({ ...getIntouchForm, phone: number });
+    if (Object.keys(errorObj).length !== 0) {
+      delete errorObj["phone"];
     }
   };
   useEffect(() => {
@@ -56,7 +63,7 @@ function TouchForm(props) {
   const handlesubmit = async () => {
     const err = validatedataObj(getIntouchForm);
     if (Object.keys(err).length === 0) {
-      let url = props.frompath || "get-in-touches";
+      let url = frompath || "get-in-touches";
       let payloaddata = {
         data: getIntouchForm,
       };
@@ -80,7 +87,7 @@ function TouchForm(props) {
   };
   return (
     <FormContainer
-      padding={props.frompath === "virtual-consultations" ? "0" : "1.5rem"}
+      padding={frompath === "virtual-consultations" ? "0" : "1.5rem"}
     >
       {!formSuccess ? (
         <>
@@ -107,13 +114,10 @@ function TouchForm(props) {
           </FormField>
           <FormField>
             <FormLabel>Phone number</FormLabel>
-            <FormInput
-              placeholder="Enter your phone number"
-              name="phoneNumber"
-              type="text"
-              pattern="[1-9]{1}[0-9]{9}"
+            <PhoneNumberInput
               value={getIntouchForm.phone}
-              onChange={(e) => handleChanges(e.target.value, "phone")}
+              name="phone"
+              onChange={handlePhoneNumber}
             />
             {errorObj.phone && <FormError>{errorObj.phone}</FormError>}
           </FormField>
@@ -125,6 +129,7 @@ function TouchForm(props) {
               placeholder="Select country"
               defaultValue={getIntouchForm.country}
               onChange={(e) => handleChanges(e.label, "country")}
+              filterOption={createFilter({ matchFrom: "start" })}
             />
             {errorObj.country && <FormError>{errorObj.country}</FormError>}
           </FormField>

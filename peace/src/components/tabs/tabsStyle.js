@@ -33,7 +33,6 @@ const TabInnerSection = styled.ul`
   justify-content: space-between;
   border-bottom: 1px solid #d6d6d6;
   @media (max-width: 900px) {
-    // width: ${(props) => (props.widthStyle ? "100%" : "100%")};
     width: 100%;
   }
 `;

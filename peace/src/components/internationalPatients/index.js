@@ -32,6 +32,7 @@ import TouchForm from "../getInTouch/touchForm";
 
 function InternationalPatientsComponent() {
   const [openModal, setOpenModal] = useState(false);
+  const [formSuccess, setformSuccess] = useState(false);
 
   const onCloseModal = () => {
     setOpenModal(false);
@@ -48,9 +49,9 @@ function InternationalPatientsComponent() {
     },
     {
       path: NurseImage,
-      title: "Get Personalised Care",
+      title: "Our Mission",
       label:
-        "Management of the psychological as well as physical withdrawal symptoms under the supervision of a team consisting of a Psychiatrist, a Clinical Psychologist and an Art based Therapist.",
+        "Provide world-class psychiatric care, and mental health treatments with compassion, personalization, and sincerity",
     },
     {
       path: RelaxImage,
@@ -156,7 +157,7 @@ function InternationalPatientsComponent() {
         />
       </SingleSectionWrapper>
       <Faq />
-      <ArticleSection urlPath="media"/>
+      <ArticleSection urlPath="articles" />
       <SingleSectionWrapper margin="6rem 0">
         <CheerSubscribe
           title="Subscribe now!"
@@ -168,9 +169,13 @@ function InternationalPatientsComponent() {
       <BookAppointmentModal
         open={openModal}
         onCloseModal={onCloseModal}
-        title="Free virtual consultation"
+        title={!formSuccess ? "Free virtual consultation" : ""}
       >
-        <TouchForm frompath="virtual-consultations"/>
+        <TouchForm
+          formSuccess={formSuccess}
+          setformSuccess={setformSuccess}
+          frompath="virtual-consultations"
+        />
       </BookAppointmentModal>
     </main>
   );

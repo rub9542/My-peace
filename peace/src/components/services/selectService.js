@@ -39,10 +39,10 @@ export default function SelectService(props) {
           <ServiceDropContent>
             <ServiceDropListTitle>{serviceTitle}</ServiceDropListTitle>
             <ServiceDropList>
-              {serviceList.map((item, index) => {
+              {serviceList.map((item) => {
                 return (
                   <ServiceDropListItem
-                    key={index}
+                    key={item.title}
                     onClick={() => onClickHandler(item)}
                   >
                     {item.title}

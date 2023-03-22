@@ -14,8 +14,9 @@ import {
 } from "./faqStyle";
 import { PrimaryLargeButton } from "../button";
 import { Link } from "gatsby-link";
+import { Markup } from "interweave";
 
-function FaqAccordion() {
+function FaqAccordion({ dataArray }) {
   const accordionButton = {
     display: "flex",
     backgroundColor: "#fff",
@@ -24,126 +25,28 @@ function FaqAccordion() {
     lineHeight: "22px",
   };
 
-  
   return (
     <>
       <AccordionWrapper>
         <FaqAccordionSection>
-          <Accordion allowZeroExpanded={true}>
-            <div>
-              <AccordionItem uuid="a">
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    What is mental illnes
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
-            <div>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    Will I be allowed to have visitors during my treatment?
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
-            <div>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    What happens if I am admitted?
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
-            <div>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    Do I need to bring my documents or records?
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
-            <div>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    So how do we start the process?
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
-            <div>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    Can I pay online for my reservation?
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
-            <div>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton style={accordionButton}>
-                    How much experience does your healthcare facilities have
-                    <br />
-                    treating international patients?
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <StyledAccordionItemPanel>
-                  <p>
-                    Mental illness is a group of biological brain disorders that
-                    affect a person’s thinking, mood, emotions, sense of
-                    reality, ability to relate and daily functioning.
-                  </p>
-                </StyledAccordionItemPanel>
-              </AccordionItem>
-            </div>
+          <Accordion allowZeroExpanded={true} allowMultipleExpanded={false}>
+            {dataArray?.length > 0 &&
+              dataArray.map((x, index) => (
+                <div key={index}>
+                  <AccordionItem uuid={index}>
+                    <AccordionItemHeading>
+                      <AccordionItemButton style={accordionButton}>
+                        {x?.attributes?.title}
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <StyledAccordionItemPanel>
+                      {/* <p> */}
+                        <Markup content={x?.attributes?.answer} />
+                      {/* </p> */}
+                    </StyledAccordionItemPanel>
+                  </AccordionItem>
+                </div>
+              ))}
           </Accordion>
         </FaqAccordionSection>
         <ViewMoreSection>

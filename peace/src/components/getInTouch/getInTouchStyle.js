@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import DetailsBack from "../../images/getInTouch/back-bg.png";
+import FooterStyle from "../footer/footerStyle";
 
 const TouchImageWrapper = styled.section`
   height: fit-content;
@@ -40,17 +41,8 @@ const DetailsTitle = styled.h2`
   margin-bottom: 1rem;
   color: rgba(51, 27, 59, 1);
 `;
-const FooterText = styled.div`
+const GetInTouchText = styled(FooterStyle.FooterText)`
   > div {
-    font-family: "Lato-Regular";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 38px;
-    color: #fff;
-    padding-bottom: 1rem;
-    gap: 0.5rem;
-    display: flex;
     color: rgba(38, 50, 56, 1);
   }
 `;
@@ -91,15 +83,21 @@ const BackBgImage = styled.div`
 const FormWrapper = styled.div`
   margin: 3.5rem 2rem;
   width: 50%;
+  align-items: center;
+  display: flex;
   @media (max-width: 800px) {
+    display: block;
     width: -webkit-fill-available;
     margin: 3.5rem 1rem;
   }
 `;
 const FormContainer = styled.div`
   background: #fff;
-  padding: ${props=>props.padding?props.padding:"1.5rem"};
+  padding: ${(props) => (props.padding ? props.padding : "1.5rem")};
   text-align: center;
+`;
+const DisabledButton = styled.div`
+  opacity: ${(props) => (props.errorFound ? "0.5" : "1")};
 `;
 export {
   TouchImageWrapper,
@@ -107,11 +105,12 @@ export {
   DetailsTitle,
   DetailsContainer,
   FooterImageWrapper,
-  FooterText,
+  GetInTouchText,
   AddressTitles,
   AddressDetails,
   AddressContainer,
   BackBgImage,
   FormContainer,
   FormWrapper,
+  DisabledButton,
 };

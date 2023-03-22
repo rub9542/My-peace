@@ -21,8 +21,10 @@ const strapiConfig = {
       populate: "*",
     },
     "post",
+    "blog",
     "posts",
     "user",
+    "job",
   ],
   queryLimit: 1000,
 };

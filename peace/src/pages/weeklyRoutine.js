@@ -13,4 +13,4 @@ const WeeklyRoutine = () => {
 
 export default WeeklyRoutine;
 
-export const Head = () => <title>Weekly Routine Page</title>;
+export const Head = () => <title>Sukoon || Weekly Routine Page</title>;

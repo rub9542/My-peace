@@ -4,13 +4,11 @@ import {
   FlexAlignCenterContainer,
   DefaultParagraphText,
 } from "../../styles/commonStyle";
-
+import { TextCardWrapper } from "../textCard/textCardStyle";
 
 const { colors } = variables;
 
-const FacilitiesDimensions = styled.div`
-  // height: 471px;
-`;
+const FacilitiesDimensions = styled.div``;
 
 const FacilitiesContainer = styled(FacilitiesDimensions)`
   margin: 2rem auto;
@@ -74,10 +72,8 @@ const FacilitiesTitle = styled.p`
     line-height: 21px;
   }
 `;
-
-const FacilitiesSubTitle = styled.span`
+const SubTitleCommonStyle = styled.span`
   font-family: Accanthis-Regular;
-  font-size: 40px;
   font-style: normal;
   line-height: 47px;
   letter-spacing: -0.01em;
@@ -85,9 +81,13 @@ const FacilitiesSubTitle = styled.span`
   color: ${colors.light};
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 20px !important;
     line-height: 21px;
   }
+`;
+
+const FacilitiesSubTitle = styled(SubTitleCommonStyle)`
+  font-size: 40px;
 `;
 
 const FacilitiesDescription = styled.p`
@@ -160,21 +160,12 @@ const AwardSectionWrapper = styled.section`
     margin: 0;
   }
 `;
-const AwardParagraph = styled.div`
+const AwardParagraph = styled(TextCardWrapper)`
   width: 50%;
   @media (max-width: 1024px) {
     width: 90%;
   }
-  > h2 {
-    font-family: "Accanthis-Regular";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 123.3%;
-    letter-spacing: -0.01em;
-    color: #101010;
-    margin: 0;
-  }
+
 `;
 
 const FacilitiesStyle = {
@@ -189,7 +180,7 @@ const FacilitiesStyle = {
   AwardSectionImageWrapper,
   AwardSectionWrapper,
   AwardParagraph,
-  ParagraphText,
+  ParagraphText,SubTitleCommonStyle
 };
 
 export default FacilitiesStyle;

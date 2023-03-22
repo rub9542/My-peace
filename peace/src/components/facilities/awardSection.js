@@ -41,17 +41,17 @@ const textCard = [
 function AwardSection() {
   return (
     <FacilitiesStyle.AwardSectionWrapper>
-        {textCard.map((textData, index) => (
+        {textCard.map((textData) => (
           <FaclityPageTextCard
-            key={textData.title + index}
+            key={textData.title}
             title={textData.title}
             description={textData.description}
           />
         ))}
       <FacilitiesStyle.AwardSectionImageWrapper>
-        {cardData.map((card, index) => (
+        {cardData.map((card) => (
           <AwardCard
-            key={card.label + index}
+            key={card.label}
             heading={card.heading}
             src={card.path}
             label={card.label}

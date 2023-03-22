@@ -21,8 +21,8 @@ import {
 } from "react-share";
 
 export default function index({ dataObj, mediaContent, apiPath }) {
-  const shareUrl =
-    window.location.origin + `/${apiPath}/${dataObj?.attributes.Slug}`;
+  const isBrowser = typeof window !== "undefined";
+  const shareUrl = isBrowser? window.location.origin + `/${apiPath}/${dataObj?.attributes.Slug}`:"";
   return (
     <ArticleCardWrapper>
       <ArticleImageWrapper>
@@ -42,13 +42,6 @@ export default function index({ dataObj, mediaContent, apiPath }) {
         </ArticleLabel>
         {mediaContent && (
           <div>
-            {/* <ShareSocial
-              url="www.google.com"
-              socialTypes={["twitter", "facebook"]}
-              onSocialButtonClicked={(data) => console.log(data)}
-              style={style}
-            /> */}
-
             <TwitterShareButton url={shareUrl}>
               <TwitterIcon size={32} />
             </TwitterShareButton>

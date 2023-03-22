@@ -24,7 +24,7 @@ export default function WeeklyRoutineComponent() {
         </div>
       </DownloadSection>
       <Faq />
-      <ArticleSection urlPath="media"/>
+      <ArticleSection urlPath="articles"/>
       <SingleSectionWrapper margin="5rem 0">
         <CheerSubscribe
           title="Subscribe now!"

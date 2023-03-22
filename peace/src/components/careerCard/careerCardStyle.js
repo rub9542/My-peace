@@ -11,6 +11,7 @@ const CareerCardWrapper = styled.div`
   border-radius: 18px;
   z-index: 2;
   padding: 1.5rem 1rem;
+  cursor: pointer;
 `;
 const CareerCardHeader = styled.h5`
   font-family: "Lato-Regular";
@@ -22,6 +23,9 @@ const CareerCardHeader = styled.h5`
   text-transform: uppercase;
   color: #331b3b;
   margin: 1rem 0 0 0;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
 const CareerCardRole = styled(DefaultParagraphText)`
   font-size: 16px;

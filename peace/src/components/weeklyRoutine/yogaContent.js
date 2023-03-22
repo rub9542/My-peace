@@ -7,6 +7,7 @@ import {
   TextCardWrapper,
   ParagraphText,
   SecondaryTextWrapper,
+  YogaMainWrapper,
 } from "./weeklyRoutineStyle";
 
 const totalData = [
@@ -64,9 +65,9 @@ const totalData = [
 
 export default function YogaContent() {
   return (
-    <div>
+    <YogaMainWrapper>
       {totalData.map((data, index) => (
-        <React.Fragment key={index}>
+        <React.Fragment key={data.title}>
           {index % 2 === 0 ? (
             <YogaContainer key={data.title}>
               <TextCardWrapper>
@@ -82,8 +83,8 @@ export default function YogaContent() {
               </div>
             </YogaContainer>
           ) : (
-            <PsychiatricContainer key={index}>
-              <SecondaryTextWrapper key={index}>
+            <PsychiatricContainer key={data.title}>
+              <SecondaryTextWrapper>
                 <h2>{data.title}</h2>
                 <ParagraphText>{data.description}</ParagraphText>
               </SecondaryTextWrapper>
@@ -98,6 +99,6 @@ export default function YogaContent() {
           )}
         </React.Fragment>
       ))}
-    </div>
+    </YogaMainWrapper>
   );
 }

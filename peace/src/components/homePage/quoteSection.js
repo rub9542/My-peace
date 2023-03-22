@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 import {
@@ -9,30 +9,7 @@ import {
   QuoteImageSubWrapper,
 } from "../../styles/homePageStyle";
 import InsuranceCarousel from "../staticComponent/card";
-
 export default function QuoteSection() {
-  const isBrowser = typeof window !== "undefined";
-
-  const [displayResponsiveImage, setDisplayResponsiveImage] = useState(
-    isBrowser ? window.innerWidth : ""
-  );
-  
-  useEffect(() => {
-    if (isBrowser) {
-      window.addEventListener("resize", setDimension);
-      return () => {
-        window.removeEventListener("resize", setDimension);
-      };
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayResponsiveImage]);
-
-  const setDimension = () => {
-    if (isBrowser) {
-      setDisplayResponsiveImage(window.innerWidth);
-    }
-  };
-
   return (
     <QuoteSectionWrapper>
       <CarouselWrapper>

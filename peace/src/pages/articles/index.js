@@ -13,4 +13,4 @@ const Articles = () => {
 
 export default Articles;
 
-export const Head = () => <title>Articles Page</title>;
+export const Head = () => <title>Sukoon || Articles Page</title>;

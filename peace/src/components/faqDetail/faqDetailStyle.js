@@ -14,39 +14,33 @@ const DetailSectionTextWrapper = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     margin: 0;
-    padding: 2rem 1.25rem 0 1.25rem;
+    padding: 4rem 1.25rem 0 1.25rem;
   }
 `;
 const DetailSearch = styled.div`
   margin: 2.5rem;
   width: 34%;
   @media (max-width: 800px) {
-    width: 95%;
+    width: 90%;
     margin: 0;
     padding: 0 1.25rem 0 1.25rem;
   }
 `;
 const SecondaryTitle = styled.h2`
-font-family: 'Accanthis-Bold';
-font-style: normal;
-font-weight: 700;
-font-size: 44px;
-line-height: 51px;
-letter-spacing: -0.01em;
-color: #331B3B;
-margin:0 0 2rem 0;
-@media (max-width: 600px) {
-  font-size: 30px !important;
-  line-height: 30px !important;
-}
->span{
-    display:block;
-    font-family: 'Accanthis-Regular';
+  font-family: "Accanthis-Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 51px;
+  letter-spacing: -0.01em;
+  color: #331b3b;
+  margin: 0 0 2rem 0;
+  > span {
+    display: block;
+    font-family: "Accanthis-Regular";
     font-style: normal;
     font-weight: 400;
-}
-
-}
+  }
 `;
 const DetailLabel = styled.label`
   font-family: "Lato-Regular";
@@ -57,6 +51,9 @@ const DetailLabel = styled.label`
   color: #000000;
   display: block;
   margin-bottom: 0.5rem;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const DetailAccordionWrapper = styled.section`
@@ -89,8 +86,21 @@ const DetailAccordionItemPanel = styled(AccordionItemPanel)`
     line-height: 25px;
   }
   li {
-    margin: 1rem 2rem !important;
+    margin: 1rem !important;
     list-style: disc !important;
+  }
+  @media (max-width: 600px) {
+    padding: 0 1.25rem;
+    p {
+      font-size: 12px;
+      margin: 0 0 0.5rem 0;
+      line-height: 20px;
+      padding: 0;
+    }
+    ul {
+      font-size: 12px;
+      padding: 0;
+    }
   }
 `;
 const DetailAccordionButton = styled(AccordionItemButton)`
@@ -99,8 +109,18 @@ const DetailAccordionButton = styled(AccordionItemButton)`
     margin: 0;
     line-height: 35px;
   }
+  @media (max-width: 600px) {
+    > p {
+      font-size: 14px;
+    }
+  }
 `;
-
+const FaqinvisibleLine = styled.div`
+  height: 3px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0.5rem;
+`;
 export {
   DetailAccordionButton,
   DetailAccordionItemPanel,
@@ -111,4 +131,5 @@ export {
   DetailSectionTextWrapper,
   FaqDetailSectionWrapper,
   SecondaryTitle,
+  FaqinvisibleLine,
 };

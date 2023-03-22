@@ -19,3 +19,5 @@ const RehabilitationServices = () => {
 };
 
 export default RehabilitationServices;
+export const Head = () => <title>Services || Rehabilitation Services</title>;
+

@@ -1,50 +1,15 @@
 import styled from "styled-components";
 import variables from "../../styles/variables";
-
+import { AboutUSWrapper, AboutUstextContainer } from "../aboutUS/aboutUSStyles";
+import FacilitiesStyle from "../facilities/facilitiesStyle";
+import { CommonPointsStyle } from "../suicideComponent/suicideStyle";
 import PatientscardBg from "../../images/patientsCare/patient-bg.png";
 const { colors } = variables;
 
-const InternationalpatientsHeader = styled.div`
-  padding: 3rem;
-  position: relative;
-  > button {
-    padding: 1rem;
-  }
+const InternationalpatientsHeader = styled(AboutUSWrapper)``;
 
-  @media (max-width: 600px) {
-    padding: 1rem;
+const InternationaltextContainer = styled(AboutUstextContainer)``;
 
-    > button {
-      display: none;
-    }
-  }
-`;
-const InternationaltextContainer = styled.div`
-  width: 50%;
-  > h2 {
-    font-size: 44px;
-  }
-  > span {
-    font-family: Lato-Regular;
-    font-size: 16px;
-    line-height: 38px;
-    letter-spacing: 0.02em;
-    text-align: left;
-  }
-
-  @media (max-width: 900px) {
-    width: 100%;
-    text-align: left;
-    > h2 {
-      text-align: left;
-      margin-bottom: 1rem;
-      font-size: 20px;
-    }
-    > span {
-      font-size: 14px;
-    }
-  }
-`;
 const InternationalHeaderBgImage = styled.img`
   position: absolute;
   top: 5rem;
@@ -168,36 +133,12 @@ const PatientsTextWrapper = styled.div`
   }
 `;
 
-const PatientsTextTitle = styled.p`
-  margin-bottom: 0px;
-  margin-top: 0px;
-  font-family: Accanthis-Bold;
-  font-size: 44px;
-  line-height: 47px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  color: ${colors.light};
+const PatientsTextTitle = styled(FacilitiesStyle.FacilitiesTitle)``;
 
-  @media (max-width: 768px) {
-    font-size: 20px;
-    line-height: 21px;
-  }
+const PatientsTextSubTitle = styled(FacilitiesStyle.SubTitleCommonStyle)`
+  font-size: 44px;
 `;
 
-const PatientsTextSubTitle = styled.span`
-  font-family: Accanthis-Regular;
-  font-size: 44px;
-  font-style: normal;
-  line-height: 47px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  color: ${colors.light};
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-    line-height: 21px;
-  }
-`;
 const PatientsTextDescription = styled.p`
   font-family: Lato-Regular;
   font-size: 16px;
@@ -247,23 +188,10 @@ const ChecklistTitle = styled.h5`
   margin-top: 1rem;
   text-transform: uppercase;
 `;
-const CheckListPoints = styled.div`
-  display: flex;
+const CheckListPoints = styled(CommonPointsStyle)`
   gap: 20px;
-  align-items: center;
-  > img {
-    height: 18px;
-    width: 18px;
-  }
-  > span {
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0px;
-    text-align: left;
-  }
 `;
+
 const CheckListPointsWrapper = styled.div`
   display: flex;
   flex-direction: column;

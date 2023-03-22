@@ -142,7 +142,6 @@ export default function index() {
               <TestimonialCard />
             </Carousel>
           </TesitimonialCarouselSectionWrapper>
-          {/* {ButtonGroup()} */}
         </TesitimonialInnerSectionWrapper>
       </TesitimonialSectionWrapper>
       <DashedCircleDiv />

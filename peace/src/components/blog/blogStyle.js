@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { DefaultParagraphText } from "../../styles/commonStyle";
 
-const BlogMainWrapper = styled.section``;
+const BlogMainWrapper = styled.section`
+  overflow: hidden;
+`;
 
 const BlogContentWrapper = styled.div`
   display: flex;
@@ -13,15 +15,22 @@ const BlogContentWrapper = styled.div`
     align-items: center;
   }
   @media (max-width: 600px) {
-    margin-top: 2rem;
+    margin: 4.5rem 0 0 0;
+    > div {
+      h2,
+      p {
+        text-align: left;
+        padding: 0rem 1rem;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
   }
 `;
 
 const BlogParagraphText = styled(DefaultParagraphText)`
   line-height: 195.5%;
-  @media (max-width: 600px) {
-    margin: 0 1rem;
-  }
 `;
 
 const BlogTextWrapper = styled.div`
@@ -37,6 +46,10 @@ const BlogTextWrapper = styled.div`
 const SecondarySubWrapper = styled.div`
   margin: 0 0 0 4rem;
   @media (max-width: 600px) {
+    h2 {
+      text-align: left;
+      padding-left: 1rem;
+    }
     margin: 0;
   }
 `;

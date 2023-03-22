@@ -8,7 +8,7 @@ const AboutUSWrapper = styled.div`
   }
 
   @media (max-width: 600px) {
-    padding: 1rem;
+    padding: 4rem 1rem 1rem;
 
     > button {
       display: none;
@@ -133,7 +133,7 @@ const AboutUsFacilitiestabContainer = styled.div`
     padding-right: 5rem;
   }
   @media (max-width: 800px) {
-    padding: 0 0 2rem 0;
+    padding: 0 1rem 2rem 1rem;
   }
   @media (max-width: 600px) {
     > div {

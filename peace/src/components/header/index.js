@@ -58,6 +58,7 @@ export default function Header({ layout }) {
     const { img, subMenu } = nav;
     if (img && subMenu) {
       onOpenSubMenu(img, subMenu);
+      closePopUp();
     }
   };
   const closeActiveSubMenu = () => {
@@ -113,8 +114,7 @@ export default function Header({ layout }) {
 
   /* Method that will fix header after a specific scrollable */
   const onScroll = (e) => {
-    // const header = document.getElementById("header-wrapper");
-    const scrollTop = window.scrollY;
+    const scrollTop = isBrowser ? window.scrollY : "";
     setSticky(scrollTop > 250 ? true : false);
   };
 
@@ -128,12 +128,7 @@ export default function Header({ layout }) {
                 <ResponsiveMenuHeader
                   onClick={() => onOpenResponsiveSubMenu(nav.name)}
                 >
-                  <Link
-                    // onClick={() => onOpenSubMenu(nav.img, nav.subMenu)}
-                    to={nav.link}
-                  >
-                    {nav.name}
-                  </Link>
+                  <Link to={nav.link}>{nav.name}</Link>
                   {nav.subMenu && (
                     <>
                       {activeSubMenu !== nav.name ? (

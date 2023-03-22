@@ -33,8 +33,8 @@ function ServiceApproach(props) {
         <ServiceSpanContent>
           {serviceInfo[selectedItem].approachDescription}
         </ServiceSpanContent>
-        {serviceInfo[selectedItem].descriptionList.map((item, index) => (
-          <ServiceListItemsWrapper key={index}>
+        {serviceInfo[selectedItem].descriptionList.map((item) => (
+          <ServiceListItemsWrapper key={item}>
             <ServiceItemDot src={FacilitiesDot} />
             <ServiceItem>{item}</ServiceItem>
           </ServiceListItemsWrapper>

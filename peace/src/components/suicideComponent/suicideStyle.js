@@ -21,6 +21,7 @@ const SuicidemainWrapper = styled.main`
     > section {
       > div {
         padding: 2rem 1rem;
+        margin-top: 3rem;
         h2,
         p {
           text-align: left;
@@ -50,6 +51,21 @@ const HelpLineWtrapper = styled.div`
   text-align: center;
   color: rgba(61, 61, 61, 1);
   padding: 1rem 0;
+  h2 {
+    font-family: Accanthis-Regular;
+    font-size: 32px;
+    letter-spacing: 0.035em;
+    text-align: center;
+    margin: 1rem 0rem;
+    font-weight: 500;
+
+    span {
+      font-family: Lato-Regular;
+      font-size: 20px;
+      letter-spacing: 0.035em;
+      text-align: center;
+    }
+  }
   p {
     font-family: Accanthis-Regular;
     font-size: 32px;
@@ -65,12 +81,37 @@ const HelpLineWtrapper = styled.div`
   }
 
   @media (max-width: 900px) {
+    padding: 1rem 1.5rem;
     text-align: center;
     p {
+      font-size: 20px;
+      margin-bottom: 0;
+      font-family: Hind Vadodara;
+      font-style: normal;
+      text-align: center;
+      letter-spacing: -0.01em;
+
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 20px;
       font-size: 20px;
     }
     span {
       font-size: 14px;
+    }
+    h2 {
+      font-family: Accanthis-Regular;
+      font-size: 20px;
+      letter-spacing: 0.035em;
+      text-align: center;
+      margin: 1rem 0rem;
+      font-weight: 700;
+      span {
+        font-family: Lato-Regular;
+        font-size: 14px;
+        letter-spacing: 0.035em;
+        text-align: center;
+      }
     }
   }
 `;
@@ -178,12 +219,9 @@ const ThoughtsWrappertext = styled.div`
     }
   }
 `;
-
-const ThoughtsList = styled.div`
+const CommonPointsStyle = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-direction: row;
   > img {
     height: 18px;
     width: 18px;
@@ -196,6 +234,11 @@ const ThoughtsList = styled.div`
     letter-spacing: 0px;
     text-align: left;
   }
+`;
+
+const ThoughtsList = styled(CommonPointsStyle)`
+  gap: 10px;
+  flex-direction: row;
 
   @media (max-width: 900px) {
     > span {
@@ -213,4 +256,5 @@ export {
   ThoughtsImageWrapper,
   ThoughtsList,
   SuicidemainWrapper,
+  CommonPointsStyle,
 };

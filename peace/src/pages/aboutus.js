@@ -1,7 +1,8 @@
-import * as React from "react"
+import * as React from "react";
 
 import OtherLayout from "../layouts/otherLayout";
 import AboutUsComponent from "../components/aboutUS";
+
 function Aboutus() {
   return (
     <OtherLayout>
@@ -11,3 +12,5 @@ function Aboutus() {
 }
 
 export default Aboutus;
+
+export const Head = () => <title>Sukoon || About Us</title>;

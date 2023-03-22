@@ -3,6 +3,7 @@ import {
   DefaultParagraphText,
   FlexAlignJustifyCenterContainer,
 } from "../../styles/commonStyle";
+import { ExploreWeeklyTextWrapper } from "../weeklyRoutine/weeklyRoutineStyle";
 import { TabInnerSection, TabList } from "../tabs/tabsStyle";
 import variables from "../../styles/variables";
 
@@ -20,14 +21,7 @@ const ExploreWeeklyContainer = styled.section`
   }
 `;
 
-const ExploreWeeklyTextWrapper = styled.div`
-  width: 45%;
-  margin: 2rem 2.5rem;
-  @media (max-width: 600px) {
-    width: 100%;
-    margin: 0;
-  }
-`;
+// const ExploreWeeklyTextWrapper = styled(ExploreWeeklyTextWrapper)``;
 const ExploreWeeklyParagraphText = styled(DefaultParagraphText)`
   line-height: 195.5%;
 `;
@@ -106,29 +100,9 @@ const ParagraphText = styled.div`
     padding-inline-start: 1rem;
   }
 `;
-const SecondaryTextWrapper = styled.div`
-  width: 28%;
-  > h4 {
-    font-family: "Lato-Regular";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 123.3%;
-    letter-spacing: -0.01em;
-    color: #101010;
-    margin: 0;
-    @media (max-width: 800px) {
-      font-size: 20px;
-    }
-  }
+const SecondaryTextWrapper = styled(TextCardWrapper)`
   @media (max-width: 1024px) {
-    width: 90%;
-    margin-bottom: 2rem;
     margin-right: 0;
-    > h2 {
-      display: flex;
-      justify-content: start;
-    }
   }
 `;
 const TabsSection = styled(TabInnerSection)`
@@ -145,10 +119,10 @@ const SingleTab = styled(TabList)`
   border-bottom: ${(props) => (props.active ? "6px solid #37474F" : "0px")};
   @media (max-width: 800px) {
     font-size: 12px;
-    padding: 0.5rem 3rem !important
+    padding: 0.5rem 3rem !important;
   }
   @media (max-width: 600px) {
-    padding: 0.5rem 1rem !important
+    padding: 0.5rem 1rem !important;
   }
 `;
 const DownloadSection = styled(FlexAlignJustifyCenterContainer)`

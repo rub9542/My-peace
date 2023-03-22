@@ -101,10 +101,10 @@ export default function HomePage() {
       <InsideSukoon />
       <TestimonialSection />
       <SingleSectionWrapper margin="0 0 0 1.5rem">
-        <OurDoctors />
+        <OurDoctors displayButton={true} />
       </SingleSectionWrapper>
       <Faq />
-      <ArticleSection showIcons={true} urlPath="media" />
+      <ArticleSection showIcons={true} urlPath="articles" />
       <SingleSectionWrapper margin="6rem 0">
         <CheerSubscribe
           title="Subscribe now!"

@@ -45,7 +45,7 @@ const ArticleCardFooterSection = styled(FlexAlignJustifyBetweenContainer)`
       font-weight: 700;
       font-size: 12px;
       line-height: 18px;
-      color: #246335;
+      color: #13443e;
       outline: 0;
       cursor: pointer;
       border: 0;

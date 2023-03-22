@@ -26,14 +26,8 @@ function FacilitiesHeader({ title, subTitle, description }) {
       <FacilitiesContainer>
         <FacilitiesTextWrapper>
           <FacilitiesLabel>Discover</FacilitiesLabel>
-          <SecondaryHeaderTitle
-            title={title || "Gurgaon"}
-            subTitle={subTitle || "Truer to the nature of the beast."}
-          />
-          <FacilitiesSpanWrapper>
-            {description ||
-              " Gurgaon is a town in Assam, India and was the capital of the Ahom kingdom for many years. It was built by the Ahom king Suklenmung in 1540. It is said that the capital was built at the suggestion of MongKwang princess Nang Sao Seng from present-day Myanmar who was married to Suklenmung."}
-          </FacilitiesSpanWrapper>
+          <SecondaryHeaderTitle title={title} subTitle={subTitle} />
+          <FacilitiesSpanWrapper>{description}</FacilitiesSpanWrapper>
           <FacilitiesButton>
             <PrimaryLargeButton name="Book now" onClick={onOpenModal} />
           </FacilitiesButton>
